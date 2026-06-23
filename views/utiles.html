@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papelería Villa — Lista de Útiles y Catálogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { villaBlue: '#0A46E4', villaAmber: '#F5C242' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVBAR GLOBAL (Consistente) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="text-villaBlue font-black text-xl flex items-center gap-2">
+            Base de Figma 📂 <span class="text-gray-900 font-black">Papelería Villa</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold text-gray-600">
+            <a href="/" class="hover:text-villaBlue transition">Inicio</a>
+            <a href="/lista-de-utiles" class="text-villaBlue">Lista de Útiles</a>
+            <a href="#" class="hover:text-villaBlue transition">Servicios</a>
+        </div>
+        <a href="https://wa.me/525550123456" target="_blank" class="bg-villaBlue text-white px-5 py-2.5 rounded-xl font-bold text-sm">
+            Cotizar Ahora
+        </a>
+    </nav>
+
+    <!-- SECCIÓN PRINCIPAL DE CATÁLOGO -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="mb-10">
+            <h1 class="text-3xl font-black text-gray-900">Todos los Productos</h1>
+            <p class="text-gray-500 mt-2">Explora nuestra colección completa de artículos de papelería estructurados desde Figma.</p>
+        </div>
+
+        <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+        <div class="space-y-6 mb-12">
+            <!-- Input del buscador -->
+            <div class="relative max-w-md">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar productos..." 
+                       class="w-full pl-5 pr-4 py-3 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-villaBlue focus:border-villaBlue transition">
+            </div>
+
+            <!-- Botones de categoría (Filtros dinámicos) -->
+            <div class="flex flex-wrap gap-3" id="filterContainer">
+                <button onclick="filterCategory('todos')" class="category-btn bg-villaBlue text-white px-5 py-2 rounded-xl font-bold text-sm transition">Todos</button>
+                <button onclick="filterCategory('cuadernos')" class="category-btn bg-white border border-gray-300 text-gray-600 px-5 py-2 rounded-xl font-bold text-sm hover:border-villaBlue hover:text-villaBlue transition">Cuadernos</button>
+                <button onclick="filterCategory('plumas')" class="category-btn bg-white border border-gray-300 text-gray-600 px-5 py-2 rounded-xl font-bold text-sm hover:border-villaBlue hover:text-villaBlue transition">Plumas y Marcadores</button>
+                <button onclick="filterCategory('arte')" class="category-btn bg-white border border-gray-300 text-gray-600 px-5 py-2 rounded-xl font-bold text-sm hover:border-villaBlue hover:text-villaBlue transition">Arte</button>
+            </div>
+        </div>
+
+        <!-- REJILLA DE PRODUCTOS (GRID ATÓMICO) -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+            <!-- Tarjeta 1 -->
+            <div class="product-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col" data-category="cuadernos">
+                <div class="h-48 bg-blue-100 flex items-center justify-center relative p-4 text-center">
+                    <span class="absolute top-3 right-3 bg-villaBlue text-white font-bold text-[10px] px-2.5 py-1 rounded-md uppercase">Cuadernos</span>
+                    <span class="text-gray-400 font-medium italic text-xs">[Muestra de Figma: Cuaderno Universitario]</span>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="product-title font-black text-lg text-gray-900">Cuadernos Premium Pasta Dura</h3>
+                        <p class="text-sm text-gray-500 mt-2">Hojas rayadas, cuadriculadas y blancas de alto gramaje para evitar traspasos de tinta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="product-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col" data-category="plumas">
+                <div class="h-48 bg-amber-50 flex items-center justify-center relative p-4 text-center">
+                    <span class="absolute top-3 right-3 bg-villaBlue text-white font-bold text-[10px] px-2.5 py-1 rounded-md uppercase">Plumas</span>
+                    <span class="text-gray-400 font-medium italic text-xs">[Muestra de Figma: Pluma de Precisión]</span>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="product-title font-black text-lg text-gray-900">Bolígrafo de Precisión Gel</h3>
+                        <p class="text-sm text-gray-500 mt-2">Tinta gel fluida anti-escurrimiento perfecta para dibujo técnico y toma de notas rápida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="product-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col" data-category="arte">
+                <div class="h-48 bg-purple-50 flex items-center justify-center relative p-4 text-center">
+                    <span class="absolute top-3 right-3 bg-villaBlue text-white font-bold text-[10px] px-2.5 py-1 rounded-md uppercase">Arte</span>
+                    <span class="text-gray-400 font-medium italic text-xs">[Muestra de Figma: Set de Acuarelas]</span>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="product-title font-black text-lg text-gray-900">Set de Acuarelas Profesionales</h3>
+                        <p class="text-sm text-gray-500 mt-2">Pigmentos de alta densidad y solubilidad óptima ideales para estudiantes de arte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- LOGICA JAVASCRIPT: FILTRO Y BUSCADOR -->
+    <script>
+        // Buscador interactivo en tiempo real
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                if(title.includes(term)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+
+        // Filtrado dinámico por botones de categorías
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'todos' || card.getAttribute('data-category') === category) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Cambiar estilos activos de los botones
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.className = "category-btn border border-gray-300 text-gray-600 px-5 py-2 rounded-xl font-bold text-sm hover:border-villaBlue hover:text-villaBlue transition";
+            });
+            event.currentTarget.className = "category-btn bg-villaBlue text-white px-5 py-2 rounded-xl font-bold text-sm transition";
+        }
+    </script>
+</body>
+</html>

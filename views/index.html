@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papelería Villa — Materiales de Primera Calidad</title>
+    <!-- Usamos Tailwind CSS vía CDN para replicar los colores exactos y fuentes geométricas de Figma -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        villaBlue: '#0A46E4',
+                        villaAmber: '#F5C242',
+                        villaDark: '#1A202C'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVBAR GLOBAL -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4 flex justify-between items-center max-w-full">
+        <div class="text-villaBlue font-black text-xl flex items-center gap-2">
+            📖 <span class="tracking-tight text-gray-900">PAPELERÍA <span class="text-villaBlue">VILLA</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold text-gray-600">
+            <a href="/" class="text-villaBlue">Inicio</a>
+            <a href="/lista-de-utiles" class="hover:text-villaBlue transition">Lista de Útiles</a>
+            <a href="#" class="hover:text-villaBlue transition">Servicios</a>
+            <a href="#" class="hover:text-villaBlue transition">Contacto</a>
+        </div>
+        <a href="https://wa.me/525550123456" target="_blank" class="bg-villaBlue text-white px-5 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100 text-sm">
+            Cotizar Ahora
+        </a>
+    </nav>
+
+    <!-- HERO SECTION (Figma Layout original) -->
+    <header class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-villaBlue bg-blue-50 px-3 py-1.5 rounded-full">
+                ● Más de 10 años de experiencia
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mt-6 leading-tight">
+                Materiales de Primera Calidad para tus <span class="text-villaBlue">Proyectos</span>
+            </h1>
+            <p class="text-gray-600 mt-6 text-lg leading-relaxed">
+                En Papelería Villa encontrarás todo lo necesario para tus tareas, impresiones y proyectos escolares con la mejor atención del barrio.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="/lista-de-utiles" class="bg-villaBlue text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 transition">
+                    Ver Catálogo &gt;
+                </a>
+                <a href="https://wa.me/525550123456" target="_blank" class="bg-villaAmber text-gray-900 px-8 py-3.5 rounded-xl font-bold hover:bg-yellow-500 transition flex items-center gap-2">
+                    💬 Cotizar Ahora
+                </a>
+            </div>
+            <p class="text-xs text-gray-500 mt-4 flex items-center gap-1">
+                ✓ Entrega rápida y confiable
+            </p>
+        </div>
+        <!-- Contenedor para la imagen de los lápices técnicos de Figma -->
+        <div class="bg-gray-100 rounded-3xl h-[350px] md:h-[500px] flex items-center justify-center overflow-hidden border border-gray-200 shadow-md relative">
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-50/20 to-transparent"></div>
+            <span class="text-gray-400 italic font-medium">[Imagen Figma: Composición Fotográfica de Lápices]</span>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE INDICADORES / METRICAS (Figma original) -->
+    <section class="bg-gray-100 py-16 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-villaBlue tracking-widest uppercase">Nosotros</span>
+                <h2 class="text-3xl font-black text-gray-900 mt-2">Conoce a <span class="text-villaBlue">Papelería Villa</span></h2>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
+                    <div class="text-3xl font-black text-villaBlue">10+</div>
+                    <div class="text-xs font-bold text-gray-500 uppercase mt-2">Años de Experiencia</div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
+                    <div class="text-3xl font-black text-villaBlue">2,000+</div>
+                    <div class="text-xs font-bold text-gray-500 uppercase mt-2">Clientes Satisfechos</div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
+                    <div class="text-3xl font-black text-villaBlue">5,000+</div>
+                    <div class="text-xs font-bold text-gray-500 uppercase mt-2">Pedidos Completados</div>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
+                    <div class="text-3xl font-black text-villaBlue">100%</div>
+                    <div class="text-xs font-bold text-gray-500 uppercase mt-2">Calidad Garantizada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y CONVERSIÓN -->
+    <footer class="bg-villaBlue text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl md:text-3xl font-black mb-4">¿Listo para tu Proyecto?</h3>
+            <p class="text-blue-100 max-w-xl mx-auto mb-8">Contáctanos hoy mismo y recibe asesoría personalizada para tu lista escolar o cotización de impresiones.</p>
+            <p class="text-sm text-blue-200">© 2026 Papelería Villa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/525550123456" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-all z-50 flex items-center justify-center">
+        <span class="text-xl">💬</span>
+    </a>
+
+</body>
+</html>
